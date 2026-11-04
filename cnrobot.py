@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-MODELS = {"qwen3.8-flash-next", "deepseek-v4.1-flash"}
+MODELS = {"qwen3.8-max"}
 
 def summarize(record):
     if record["kind"] not in {"fixture", "native"}:
@@ -23,3 +23,4 @@ def summarize(record):
 
 if __name__ == "__main__":
     print(summarize(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8-sig"))))
+
